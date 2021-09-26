@@ -55,6 +55,7 @@ nav {
   left:0;
   background-color: #fff;
   z-index: 99;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
 }
 h1 {
   margin:30px 0;
@@ -438,9 +439,20 @@ input {
   background-color:#fff;
   padding:40px 60px;
 }
+.link .link_box a {
+  display: block;
+  transition:all 0.5s;
+}
 .link .link_box a:hover {
   /* font-weight:bold; */
   color:#821b1f;
+}
+.link .link_box a p.sns_icon, .link .link_box a p.seat_icon {
+  transform:rotateY(0deg);
+  transition:all 1s;
+}
+.link .link_box a:hover p.sns_icon, .link .link_box a:hover p.seat_icon {
+  transform:rotateY(540deg);
 }
 .link .link_box .link_box_1st::after {
   content:'';
@@ -587,9 +599,9 @@ input {
 }
 /* -----------------------footer---------------------------- */
 footer {
-  height:140px;
+  height:90px;
   background-color:#333333;
-  padding-top:25px;
+  padding:25px 0;
 }
 
 footer h5 a {
@@ -621,12 +633,15 @@ footer .f_info ul li {
 footer .f_info ul li a {
   display: block;
   color:#fff;
-  font-size:18px;
+  font-size:16px;
   font-weight:bold;
+}
+footer .f_info ul li:hover a {
+  text-decoration: underline;
 }
 footer .f_info address {
   font-style:normal;
-  margin-bottom:15px;
+  margin-bottom:10px;
 }
 /* --------------------------- go_top------------------------------ */
 .go_top {
@@ -638,9 +653,14 @@ footer .f_info address {
   background: url(../img/f_top.png) no-repeat center;
   background-color:#333;
   border-radius: 33px;
-  position: fixed;
-  right:10%;
-  bottom:30px;
+  position: absolute;
+  right:0;
+  top:50%;
+  transform:rotateX(0deg);
+  transition:all 1s;
+}
+.go_top:hover {
+  transform:rotateX(360deg);
 }
 /* -----------------------------sub_page--------------------------- */
 /* ------------------------lnb----------------------- */
@@ -726,6 +746,7 @@ footer .f_info address {
   font-size:72px;
   margin:110px 0 65px;
   text-align:center;
+  color:#333;
 }
 .sub_content .greetin_img_box {
   margin:0 auto;
@@ -751,4 +772,61 @@ footer .f_info address {
 .sub_content p.sub_txt {
   line-height: 1.5;
   background: url(../img/sub_sign.png) no-repeat 160px bottom;
+}
+
+
+/* 퀵메뉴 시작 */
+#quick {
+  position:fixed;
+  top:25%;
+  right:5%;
+  /* transform: translateY(-45%); */
+  width:100px;
+  /* height:560px; */
+  background-color: #fff;
+  display: none;
+}
+#quick li {
+  /* height:100px; */
+  text-align:center;
+  padding:16px 0;
+  transition:all 0.5s;
+}
+#quick li a {
+  display: block;
+}
+#quick li:hover {
+  background-color: #ddd;
+}
+#quick li img {
+  transform: rotateY(0);
+  transition: all 1s;
+}
+#quick li:hover img {
+  transform: rotateY(540deg);
+}
+#quick li span {
+  display:block;
+  margin-top:5px;
+  font-weight:bold;
+}
+#quick li.q_title, #quick li.q_top {
+  background-color: #4778b3;
+  /* height:80px; */
+}
+#quick li.q_top:hover {
+  opacity: 0.7;
+}
+#quick li.q_title, #quick li.q_top a {
+  color:#fff;
+}
+#quick li.q_title a {
+  font-size:18px;
+  line-height:1.5;
+}
+#quick li.q_top a {
+  font-size:20px;
+}
+#quick li.q_top span {
+  margin-top:0;
 }
