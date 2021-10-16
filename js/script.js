@@ -9,5 +9,9 @@ $(function(){       //시작
       $("#quick").fadeOut();
     }
   });
-
+  $("nav .gnb > li").hover(function(){
+    $(this).find(".submenu").stop().slideDown();
+  },function(){
+    $(this).find(".submenu").stop().slideUp();
+  });
 });       //끝

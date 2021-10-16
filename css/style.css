@@ -78,14 +78,14 @@ nav .gnb::after {
   display: block;
   clear: both;
 }
-nav .gnb li {
+nav .gnb > li {
   font-size:24px;
   font-weight:bold;
   float:left;
   margin-right:40px;
   line-height:30px;
 }
-nav .gnb li:last-child {
+nav .gnb > li:last-child {
   margin-right:40px
 }
 nav .gnb li a {
@@ -96,14 +96,35 @@ nav .gnb li:hover > a {
 }
 nav .gnb li p.underbar {
   width:100%;
-  height:2px;
+  height:3px;
   background-color: #d47930;
   margin-top: 10px;
   opacity: 0;
   transition:opacity 0.7s;
 }
-nav .gnb li:hover p.underbar {
+nav .gnb li a:hover + p.underbar {
   opacity: 1;
+}
+nav .gnb > li > ul.submenu {
+  padding:10px 50px;
+  position:absolute;
+  top: 60px;
+  left:-100px;  
+  background-color: #fff;
+  display: none;
+}
+nav .gnb > li > ul.submenu > li {
+  float:none;
+  /* background-color:#fff; */
+}
+nav .gnb > li > ul.submenu > li a {
+  display:block;
+  line-height:50px;
+  /* padding:0 50px; */
+  text-align:center;
+}
+nav .gnb > li > ul.submenu > li > p.underbar {
+  margin-top:0;
 }
 .search {
   height:31px;
@@ -779,7 +800,7 @@ footer .f_info address {
 #quick {
   position:fixed;
   top:25%;
-  right:5%;
+  right:2%;
   /* transform: translateY(-45%); */
   width:100px;
   /* height:560px; */
